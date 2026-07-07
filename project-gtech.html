@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>G-Tech — E-Commerce & Shipping Platform — Ahmed Sarr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="bg-grid"></div>
+
+<nav>
+  <div class="wrap">
+    <a href="index.html" class="nav-logo">ahmed<span>.</span>sarr<span>()</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#education">Education</a></li>
+    </ul>
+    <a class="nav-cta" href="index.html#contact">Contact</a>
+  </div>
+</nav>
+
+<section class="detail-hero">
+  <div class="wrap">
+    <a class="back-link reveal" href="index.html#projects">← Back to all projects</a>
+    <span class="detail-tag reveal">FLUTTER · FIREBASE</span>
+    <h1 class="reveal">G-Tech — E-Commerce & Shipping Platform</h1>
+    <p class="lede reveal">A full customer + admin app pair for online ordering, built with a shipping engine that actually understands geography instead of flat-rate guessing.</p>
+    <div class="detail-actions reveal">
+      <a class="btn-primary" href="https://github.com/asarr22/" target="_blank" rel="noopener">View on GitHub ↗</a>
+      <a class="btn-ghost" href="index.html#contact">Ask about this project</a>
+    </div>
+    <p class="gh-note reveal">Repository is private — button links to profile; message me for access.</p>
+
+    <div class="detail-shot reveal">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+      <span>Screenshot placeholder — add app screens here</span>
+    </div>
+
+    <div class="detail-body">
+      <div class="reveal">
+        <h3>Overview</h3>
+        <p>G-Tech is a two-app e-commerce platform: a customer-facing Flutter app for browsing, ordering, and tracking, and a separate administrator app for managing products, orders, and fulfillment.</p>
+        <p>The most interesting engineering problem was shipping cost. Instead of a flat fee, I built a GPS-based pricing engine using the Haversine formula to calculate real distance from a central distributor location, then applied tiered pricing bands based on that distance.</p>
+        <p>Fee tiers live in a single Firestore config document, so pricing can be adjusted from the backend at any time without shipping a new app build — useful for a small team that needs to react to fuel costs or delivery zone changes quickly.</p>
+        <h3 style="margin-top:34px;">Highlights</h3>
+        <ul>
+          <li>Separate customer and admin Flutter apps sharing one Firebase backend</li>
+          <li>Haversine-formula distance calculation for dynamic shipping fees</li>
+          <li>Runtime-configurable pricing tiers via Firestore, no redeploy required</li>
+          <li>Product catalog, cart, checkout, and order management flows</li>
+          <li>Custom UI components refined for performance over flashy rewrites</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <div class="side-box">
+          <h4>Stack</h4>
+          <div class="project-stack">
+            <span class="tag-chip">Flutter</span>
+            <span class="tag-chip">Firebase</span>
+            <span class="tag-chip">Firestore</span>
+            <span class="tag-chip">Cloud Functions</span>
+            <span class="tag-chip">Geolocation</span>
+          </div>
+        </div>
+        <div class="side-box">
+          <h4>Status</h4>
+          <div class="project-stack"><span class="tag-chip">Pre-launch</span></div>
+        </div>
+        <div class="side-box">
+          <h4>Role</h4>
+          <div class="project-stack"><span class="tag-chip">Solo developer</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="next-project">
+  <a href="project-donation.html">Next project: Donation Management Platform →</a>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Ahmed Sarr — Dakar, Senegal</p>
+    <p>Built with Flutter in mind ⚡</p>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach((el, idx) => {
+    el.style.transitionDelay = (idx * 40) + 'ms';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>

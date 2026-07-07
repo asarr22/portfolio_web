@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Android Open Source Development — Ahmed Sarr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="bg-grid"></div>
+
+<nav>
+  <div class="wrap">
+    <a href="index.html" class="nav-logo">ahmed<span>.</span>sarr<span>()</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#education">Education</a></li>
+    </ul>
+    <a class="nav-cta" href="index.html#contact">Contact</a>
+  </div>
+</nav>
+
+<section class="detail-hero">
+  <div class="wrap">
+    <a class="back-link reveal" href="index.html#projects">← Back to all projects</a>
+    <span class="detail-tag reveal">AOSP · VOLUNTEER · 2016–2021</span>
+    <h1 class="reveal">Android Open Source Development</h1>
+    <p class="lede reveal">Five years contributing to Android device porting for Samsung smartphones — kernel work, AOSP builds, and the system-level layer most app developers never touch.</p>
+    <div class="detail-actions reveal">
+      <a class="btn-primary" href="https://github.com/asarr22/" target="_blank" rel="noopener">View on GitHub ↗</a>
+      <a class="btn-ghost" href="index.html#contact">Ask about this project</a>
+    </div>
+    <p class="gh-note reveal">Individual device-tree repos available on request.</p>
+
+    <div class="detail-shot reveal">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+      <span>Screenshot placeholder — add app screens here</span>
+    </div>
+
+    <div class="detail-body">
+      <div class="reveal">
+        <h3>Overview</h3>
+        <p>Between 2016 and 2021, I volunteered on Android device porting projects, helping bring newer Android versions to Samsung devices that had aged out of official support.</p>
+        <p>This meant working well below the app layer: compiling and modifying kernels, building from the Android Open Source Project directly, configuring device trees, and integrating vendor blobs so hardware (camera, radio, sensors) actually worked correctly after a port.</p>
+        <p>A meaningful chunk of the work was debugging — tracing boot loops, driver mismatches, and vendor integration failures back to their root cause across kernel logs and system traces.</p>
+        <h3 style="margin-top:34px;">Highlights</h3>
+        <ul>
+          <li>Ported newer Android versions to unsupported Samsung devices</li>
+          <li>Kernel compilation and modification for target hardware</li>
+          <li>Full AOSP builds from source</li>
+          <li>Device tree configuration and vendor blob integration</li>
+          <li>System-level debugging (boot loops, driver mismatches)</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <div class="side-box">
+          <h4>Stack</h4>
+          <div class="project-stack">
+            <span class="tag-chip">AOSP</span>
+            <span class="tag-chip">Android Kernel</span>
+            <span class="tag-chip">C</span>
+            <span class="tag-chip">Device Trees</span>
+            <span class="tag-chip">System Debugging</span>
+          </div>
+        </div>
+        <div class="side-box">
+          <h4>Status</h4>
+          <div class="project-stack"><span class="tag-chip">Volunteer, 2016–2021</span></div>
+        </div>
+        <div class="side-box">
+          <h4>Role</h4>
+          <div class="project-stack"><span class="tag-chip">Contributor</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="next-project">
+  <a href="project-binary.html">Next project: Desktop Binary Editing Utilities →</a>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Ahmed Sarr — Dakar, Senegal</p>
+    <p>Built with Flutter in mind ⚡</p>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach((el, idx) => {
+    el.style.transitionDelay = (idx * 40) + 'ms';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
